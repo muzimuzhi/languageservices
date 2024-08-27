@@ -11,7 +11,9 @@ beforeEach(() => {
 
 describe("validation", () => {
   it("valid workflow", async () => {
-    const result = await validate(createDocument("wf.yaml", "on: push\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n    - run: echo"));
+    const result = await validate(
+      createDocument("wf.yaml", "on: push\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n    - run: echo")
+    );
 
     expect(result.length).toBe(0);
   });
